@@ -1,0 +1,83 @@
+---
+title: "RLohiya_Assignment9"
+author: "Ritesh Lohiya"
+date: "October 26, 2018"
+output: html_document
+---
+
+#                             ASSIGNMENT 9
+
+#           IS 605 FUNDAMENTALS OF COMPUTATIONAL MATHEMATICS
+
+#                  CHAPTER 9. CENTRAL LIMIT THEOREM
+
+PS1. The price of one share of stock in the Pilsdorff Beer Company (see Exercise 8.2.12) is given by $Y_n$ on the nth day of the year. Finn observes that the differences $X_n = Y_{n+1} - Y_n$ appear to be independent random variables with a common distribution having mean µ = 0 and variance $\sigma^2 = 1/4$. If $Y_1 = 100$, estimate the probability that $Y_{365}$ is
+
+(a) $Y_{365}$  $\ge 100$.
+
+```{r}
+pnorm(100-100, mean = 0, sd = sqrt(364/4), lower.tail = F)
+```
+
+(b) $Y_{365}$ $\ge 100$.
+
+```{r}
+pnorm(110-100, mean = 0, sd = sqrt(364/4), lower.tail = F)
+```
+
+(c) $Y_{365}$ $\ge 100$
+
+```{r}
+pnorm(120-100, mean = 0, sd = sqrt(364/4), lower.tail = F)
+```
+
+
+
+
+
+PS2: Calculate the expected value and variance of the binomial distribution using the moment generating function.
+
+
+
+The moment generating function: 
+
+$M(t)=[(1-p) +pe^t]^n$.
+
+$M'(t) = n(pe^t)[(1-p)+pe^t]^{n-1}$
+
+Expected value: $M'(0) = np$
+
+$M''(t) = n(n-p)(pe^t)^2[(1-p)+pet]^{n-2} + n(pe^t)[(1-p)+pe^t]^{n-1}$
+
+Variance: $M''(0) = n(n-1)p^2 + np$
+
+$\sigma^2 = M''(0) - [M'(0)]^2 = np(1-p)$
+
+
+
+
+
+
+PS3: Calculate the expected value and variance of the exponential distribution using the moment generating function.
+
+$M(t) = \frac{\lambda}{\lambda-t}$
+
+$M'(t) = \frac{\lambda}{(\lambda-t)^2}$
+
+Expected Value: $M'(0) = 1/{\lambda}$
+
+$M''(t) = \frac{2\lambda}{(\lambda-t)^3}$
+
+$M''(0) = \frac2{(\lambda)^2}$
+
+$\sigma^2 = \frac2{(\lambda)^2} - (1/{\lambda})^2 = (1/{\lambda})^2$
+
+
+
+
+
+
+
+
+
+
